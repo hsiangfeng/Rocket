@@ -12,50 +12,49 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+time, mark, audio, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font: inherit;
+    font-size: 100%;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section{
+    display: block;
 }
-body {
-	line-height: 1;
+body{
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol, ul{
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote, q{
+    quotes: none;
 }
 blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+q:before, q:after{
+    content: "";
+    content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 
 html{
     height: 100%;
-    
 }
 body{
-    background-image: url('../img/map.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-image: url("../img/map.png");
     background-position: bottom ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 .rocket{
     position: absolute;
@@ -71,4 +70,20 @@ body{
 }
 .rocket-3{
     left: 630px;
+}
+.rocketDistance-1,
+.rocketDistance-2,
+.rocketDistance-3{
+    margin: 20px;
+    font-size: 20px;
+}
+.wrap_data{
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    text-align: center;
+}
+.ranking .rankingdata{
+    margin: 20px;
+    font-size: 20px;
 }

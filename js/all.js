@@ -3,12 +3,20 @@ let rocketTime = 5000;
 let againTime = 5000;
 let initial = 6000;
 let x = 500;
+let rocketDistance_1 = document.querySelector('.rocketDistance-1');
+let rocketDistance_2 = document.querySelector('.rocketDistance-2');
+let rocketDistance_3 = document.querySelector('.rocketDistance-3');
 
-rocketSetTimeOut();
+window.onload = function () {
+    rocketDistance_1.textContent = "一號火箭等候發射中...";
+    rocketDistance_2.textContent = "二號火箭等候發射中...";
+    rocketDistance_3.textContent = "三號火箭等候發射中...";
+    rocketSetTimeOut();
+}
 
 function rocketSetTimeOut() {
     rocketTime -= 1000;
-    console.log('發射倒數:'+rocketTime / 1000 + '秒');
+    console.log('發射倒數:' + rocketTime / 1000 + '秒');
     if (rocketTime == 0) {
         rocketUp();
         reRocketTimeOut()
@@ -16,34 +24,91 @@ function rocketSetTimeOut() {
     }
     setTimeout("rocketSetTimeOut()", 1000);
 }
-function reRocketTimeOut(){
-    againTime -=1000;
-    console.log('回歸倒數:'+againTime / 1000 + '秒');
-    if(againTime == 0){
+function reRocketTimeOut() {
+    againTime -= 1000;
+    console.log('回歸倒數:' + againTime / 1000 + '秒');
+    if (againTime == 0) {
         reRocket()
         rocketTime += initial;
         againTime += initial;
         rocketSetTimeOut()
         return;
     }
-    setTimeout("reRocketTimeOut()",1000);
+    setTimeout("reRocketTimeOut()", 1000);
 }
 function getRandom(n) {
     return Math.floor(Math.random() * n);
 }
 
 function rocketUp() {
-    document.querySelector('.rocket-1').style.bottom = getRandom(1000)+'px';
-    document.querySelector('.rocket-2').style.bottom = getRandom(1000)+'px';
-    document.querySelector('.rocket-3').style.bottom = getRandom(1000)+'px';
+    var a = document.querySelector('.rocket-1').style.bottom = getRandom(1000) + 'px';
+    var b = document.querySelector('.rocket-2').style.bottom = getRandom(1000) + 'px';
+    var c = document.querySelector('.rocket-3').style.bottom = getRandom(1000) + 'px';
+    ranging(a, b, c)
+    rocketDistance_1.textContent = "火箭一號發射距離:" + a;
+    rocketDistance_2.textContent = "火箭二號發射距離:" + b;
+    rocketDistance_3.textContent = "火箭三號發射距離:" + c;
 }
 
 function reRocket() {
     document.querySelector('.rocket-1').style.bottom = '101px';
     document.querySelector('.rocket-2').style.bottom = '101px';
     document.querySelector('.rocket-3').style.bottom = '101px';
+    rocketDistance_1.textContent = "一號火箭等候發射中...";
+    rocketDistance_2.textContent = "二號火箭等候發射中...";
+    rocketDistance_3.textContent = "三號火箭等候發射中...";
 }
+function ranging(rocketNameA, rocketNameB, rocketNameC) {
+    let ranking = document.querySelector('.ranking');
+    let rocket = [{
+        rocketName: 1,
+        distance: rocketNameA
+    }, {
+        rocketName: 2,
+        distance: rocketNameB
+    }, {
+        rocketName: 3,
+        distance: rocketNameC
+    }]
+    let rangData = rocket.sort((a, b) => {
+        return a.distance < b.distance ? 1 : -1;
+    })
+    console.log(rangData);
+    console.log(rangData.length);
+    let str = "";
+    for (let i = 0; i < rangData.length; i++) {
+        if (i == 0) {
+            str += `
+            <div class="rankingdata">
+                <h1 style="color:green;font-size:20px;">冠軍</h1>
+                <div class="ranking">火箭順序:${rocket[i].rocketName}</div>
+                <div class="ranking">發射距離:${rocket[i].distance}</div>
+            </div>
+            `;
+        } else if (i == 1) {
+            str += `
+            <div class="rankingdata">
+                <h1 style="color:blue;font-size:20px;">亞軍</h1>
+                <div class="ranking">火箭順序:${rocket[i].rocketName}</div>
+                <div class="ranking">發射距離:${rocket[i].distance}</div>
+            </div>
+            `;
+        } else if (i == 2) {
+            str += `
+            <div class="rankingdata">
+                <h1 style="color:red;font-size:20px;">季軍</h1>
+                <div class="ranking">火箭順序:${rocket[i].rocketName}</div>
+                <div class="ranking">發射距離:${rocket[i].distance}</div>
+            </div>
+            `;
 
+        }
+    }
+    ranking.innerHTML = str;
+}
+function rocketChampion() {
+
+}
 function keyupRocket(e) {
     console.log(e.keyCode);
     switch (e.keyCode) {
@@ -56,11 +121,6 @@ function keyupRocket(e) {
         case 67:
             document.querySelector('.rocket-3').style.bottom = '2000px';
             break;
-        // default:
-        //     document.querySelector('.rocket-1').style.bottom = '2000px';
-        //     document.querySelector('.rocket-2').style.bottom = '2000px';
-        //     document.querySelector('.rocket-3').style.bottom = '2000px';
-        //     break;
     }
 }
 
