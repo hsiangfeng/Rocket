@@ -23,7 +23,7 @@ function rocketSetTimeOut () {
     reRocketTimeOut()
     return
   }
-  setTimeout(rocketSetTimeOut(), 1000)
+  setTimeout(rocketSetTimeOut, 1000)
 }
 // 倒數回歸
 function reRocketTimeOut () {
