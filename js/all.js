@@ -1,4 +1,4 @@
-const el = document.getElementsByClassName('body')
+const el = document.body
 let rocketTime = 5000
 let againTime = 5000
 const initial = 6000
@@ -17,7 +17,7 @@ window.onload = function () {
 // 發射倒數
 function rocketSetTimeOut () {
   rocketTime -= 1000
-  // console.log('發射倒數:' + rocketTime / 1000 + '秒')
+  console.log('發射倒數:' + rocketTime / 1000 + '秒')
   if (rocketTime === 0) {
     rocketUp()
     reRocketTimeOut()
@@ -28,7 +28,7 @@ function rocketSetTimeOut () {
 // 倒數回歸
 function reRocketTimeOut () {
   againTime -= 1000
-  // console.log('回歸倒數:' + againTime / 1000 + '秒');
+  console.log('回歸倒數:' + againTime / 1000 + '秒')
   if (againTime === 0) {
     reRocket()
     rocketTime += initial
@@ -111,7 +111,7 @@ function ranging (rocketNameA, rocketNameB, rocketNameC) {
 }
 // keyup發射
 function keyupRocket (e) {
-  // console.log(e.keyCode)
+  console.log(e.keyCode)
   switch (e.keyCode) {
     case 90:
       document.querySelector('.rocket-1').style.bottom = '2000px'
