@@ -1,0 +1,28 @@
+{
+  "name": "rocket",
+  "version": "1.0.0",
+  "description": "JS簡單keyCode  \r https://hsiangfeng.github.io/Rocket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsiangfeng/Rocket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsiangfeng/Rocket/issues"
+  },
+  "homepage": "https://github.com/hsiangfeng/Rocket#readme",
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
