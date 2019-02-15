@@ -4,7 +4,7 @@ https://hsiangfeng.github.io/Rocket
 ## 引入ES lint
 風格:standard  
 使用方式(安裝NPM):  
-    npm install
+    `npm install`
 ## 說明
 1.支援keyCode  
 1-1.keyCode按鍵為鍵盤z、x、c  
