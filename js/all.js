@@ -44,9 +44,9 @@ function getRandom (n) {
 }
 // 火箭發射
 function rocketUp () {
-  var a = document.querySelector('.rocket-1').style.bottom = getRandom() + 'px'
-  var b = document.querySelector('.rocket-2').style.bottom = getRandom() + 'px'
-  var c = document.querySelector('.rocket-3').style.bottom = getRandom() + 'px'
+  let a = document.querySelector('.rocket-1').style.bottom = getRandom() + 'px'
+  let b = document.querySelector('.rocket-2').style.bottom = getRandom() + 'px'
+  let c = document.querySelector('.rocket-3').style.bottom = getRandom() + 'px'
   ranging(a, b, c)
   rocketDistanceOne.textContent = '火箭一號發射距離:' + a
   rocketDistanceTwo.textContent = '火箭二號發射距離:' + b
